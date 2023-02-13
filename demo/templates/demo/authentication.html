@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+
+<!-- Mirrored from www.adminmart.com/src/html/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jan 2020 10:54:44 GMT -->
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'demo/assets/images/favicon.png' %}">
+    <title>Eboard api documentation</title>
+    <!-- Custom CSS -->
+    <link href="{% static 'demo/dist/css/style.min.css' %}" rel="stylesheet">
+    <!-- This Page CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'demo/assets/extra-libs/prism/prism.css'%}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-6">
+                        <h4 class="mb-4">Authentication<br>
+                            <strong>BASE_URL=> /auth/</strong>
+                        </h4>
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="accordion" class="custom-accordion mb-4">
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse"
+                                            href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                           {POST} Authenticate User<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/token/
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home">
+                                                        <strong>Body</strong><br>
+                                                        data expected by the end point <br>
+                                                        <code>
+                                                            { <br>
+                                                                "username":"string",<br>
+                                                                "password":"password"<br>
+                                                            }
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane show active" id="profile">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> Authentication Token<br>
+                                                        <code>
+                                                            { 
+                                                                <br> 'token' : 'tokenkey', <br>
+                                                                'user':{user_details}, <br>
+                                                                'profile':{profile_details} <br>
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse"
+                                            href="#collapseroles" aria-expanded="true" aria-controls="collapseroles">
+                                           {GET} List All Roles<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseroles" class="collapse show" aria-labelledby="headingroles"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/roles/
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeroles" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileroles" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsroles" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeroles">
+                                                        <strong>Body</strong><br>
+                                                </div>
+                                                <div class="tab-pane show active" id="profileroles">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsroles">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> List of all current roles<br>
+                                                        <code>
+                                                            [ <br>
+                                                            { <br>
+                                                                "codename": "${unique string}", <br>
+                                                                "name": "${string}"<br>
+                                                            } <br>
+                                                            ]
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+
+                        </div> <!-- end custom accordions-->
+                    </div> <!-- end col -->
+
+                </div>
+                <!-- end row-->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="{% static 'demo/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static 'demo/assets/libs/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'demo/assets/libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="{% static 'demo/dist/js/app-style-switcher.js' %}"></script>
+    <script src="{% static 'demo/dist/js/feather.min.js' %}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{% static 'demo/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js' %}"></script>
+    <script src="{% static 'demo/assets/extra-libs/sparkline/sparkline.js' %}"></script>
+    <!--Wave Effects -->
+    <!-- themejs -->
+    <!--Menu sidebar -->
+    <script src="{% static 'demo/dist/js/sidebarmenu.js' %}"></script>
+    <!--Custom JavaScript -->
+    <script src="{% static 'demo/dist/js/custom.min.js' %}"></script>
+    <!-- This Page JS -->
+    <script src="{% static 'demo/assets/extra-libs/prism/prism.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from www.adminmart.com/src/html/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jan 2020 10:54:44 GMT -->
+</html>

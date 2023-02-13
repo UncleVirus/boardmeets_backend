@@ -1,0 +1,23 @@
+Starting E-board-daphne as sudocrack
+./super.bash: line 12: /home/sudocrack/Desktop/E-board/venv/.env: No such file or directory
+2022-01-21 08:17:39,864 INFO     Starting server at tcp:port=8000:interface=0.0.0.0
+2022-01-21 08:17:39,865 INFO     HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2022-01-21 08:17:39,865 INFO     Configuring endpoint tcp:port=8000:interface=0.0.0.0
+2022-01-21 08:17:39,866 INFO     HTTPFactory starting on 8000
+2022-01-21 08:17:39,866 INFO     Starting factory <daphne.http_protocol.HTTPFactory object at 0x7f1e460c6e50>
+2022-01-21 08:17:39,866 INFO     Listening on TCP address 0.0.0.0:8000
+2022-01-21 08:17:47,022 DEBUG    HTTP b'GET' request for ['127.0.0.1', 50646]
+2022-01-21 08:17:47,147 DEBUG    HTTP 200 response started for ['127.0.0.1', 50646]
+2022-01-21 08:17:47,147 DEBUG    HTTP close for ['127.0.0.1', 50646]
+2022-01-21 08:17:47,148 INFO     "127.0.0.1" - - [21/Jan/2022:08:17:46 +0000] "GET / HTTP/1.1" 200 11647 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36"
+2022-01-21 08:17:47,148 DEBUG    HTTP response complete for ['127.0.0.1', 50646]
+2022-01-21 08:17:47,153 DEBUG    Starting new HTTPS connection (1): o1072744.ingest.sentry.io:443
+2022-01-21 08:17:47,551 DEBUG    https://o1072744.ingest.sentry.io:443 "POST /api/6071974/envelope/ HTTP/1.1" 200 41
+2022-01-21 08:17:50,738 DEBUG    HTTP b'GET' request for ['127.0.0.1', 50646]
+2022-01-21 08:17:50,794 DEBUG    HTTP 200 response started for ['127.0.0.1', 50646]
+2022-01-21 08:17:50,794 DEBUG    HTTP response chunk for ['127.0.0.1', 50646]
+2022-01-21 08:17:50,794 DEBUG    HTTP close for ['127.0.0.1', 50646]
+2022-01-21 08:17:50,795 INFO     "127.0.0.1" - - [21/Jan/2022:08:17:49 +0000] "GET /reg HTTP/1.1" 200 86733 "http://127.0.0.1:8000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36"
+2022-01-21 08:17:50,795 DEBUG    HTTP response complete for ['127.0.0.1', 50646]
+2022-01-21 08:17:51,189 DEBUG    https://o1072744.ingest.sentry.io:443 "POST /api/6071974/envelope/ HTTP/1.1" 200 41
+2022-01-21 08:18:50,797 INFO     Timing out client: IPv4Address(type='TCP', host='127.0.0.1', port=50646)

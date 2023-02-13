@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+
+<!-- Mirrored from www.adminmart.com/src/html/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jan 2020 10:54:44 GMT -->
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'demo/assets/images/favicon.png' %}">
+    <title>Eboard api documentation</title>
+    <!-- Custom CSS -->
+    <link href="{% static 'demo/dist/css/style.min.css' %}" rel="stylesheet">
+    <!-- This Page CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'demo/assets/extra-libs/prism/prism.css'%}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-6">
+                        <h4 class="mb-4">Voting Module<br>
+                            <strong>BASE_URL=> api/voting/</strong>
+                        </h4>
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="accordion" class="custom-accordion mb-4">
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOneitem">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-success" data-toggle="collapse"
+                                            href="#collapseOneitem" aria-expanded="false" aria-controls="collapseOneitem">
+                                           {POST} Create Vote<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOneitem" class="collapse" aria-labelledby="headingOneitem"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <code><span>url=></span>
+                                                {BASE_URL}/list/ </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitem" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitem" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitem" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitem">
+                                                        <strong>Body</strong><br>
+                                                        data expected by the end point <br>
+                                                        <code>
+                                                            { <br>
+                                                                "question":"string", <br>
+                                                                "description":"string", <br>
+                                                                "expiry_date": Vote expiry datetime ISO standard time e.g 2020-09-15T08:45:56.555Z, <br>
+                                                                "vote_start_date": Vote start datetime ISO standard time e.g 2020-09-15T08:45:56.555Z, <br>
+                                                                "reviewers":[list of reviewers, user ids], <br>
+                                                            } <br>
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profileitem">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitem">
+                                                    <p>
+                                                        <strong>status:</strong> 201 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> vote created<br>
+                                                        <code>
+                                                            { <br>
+                                                                "result": {  <br>
+                                                                    "id": 1, ===> vote ID <br>
+                                                                    "question": "test", <br>
+                                                                    "description": "test", <br>
+                                                                    "expiry_date": "2021-03-18T07:39:01.874636Z", <br>
+                                                                    "vote_start_date": "2021-01-18T07:39:01.874636Z",  <br>
+                                                                    "created_by": 12  <br>
+                                                                }, <br>
+                                                                "code": 1  <br>
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                    <p>
+                                                        <strong>status:</strong> 400 BAD_REQUEST
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> errors<br>
+                                                        <code>
+                                                            { <br>
+                                                                "errors":error,<br>
+                                                                "code":0,<br>
+                                                                "message":message, <br>
+                                                            }
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingsubOneitemlist">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-secondary" data-toggle="collapse"
+                                            href="#collapsesubOneitemlist" aria-expanded="false" aria-controls="collapsesubOneitemlist">
+                                           {GET} list All Votes<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsesubOneitemlist" class="collapse" aria-labelledby="headingsubOneitemlist"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <code><span>url=></span>
+                                                {BASE_URL}/list/ </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemsublist" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemsublist" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemsublist" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemsublist">
+                                                </div>
+                                                <div class="tab-pane" id="profileitemsublist">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemsublist">
+                                                    <p>
+                                                        <strong>status:</strong> 200 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> List of all votes created. <br>
+                                                        
+                                                        <code>
+                                                            [{ <br>
+                                                                "id":"integer"<br>
+                                                                "question:"string"<br>
+                                                                "description":"string"<br>
+                                                                "expiry_date":"datetime ISO standard time e.g 2020-09-15T08:45:56.555Z"<br>
+                                                                "vote_start_date":"datetime ISO standard time e.g 2020-09-15T08:45:56.555Z"<br>
+                                                                "created_by":"id"<br>
+                                                            }]
+                                                        </code>
+                                                        
+                                                        
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseorg_detail_delete">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseorg_detail_delete" aria-expanded="false"
+                                            aria-controls="collapseorg_detail_delete">
+                                            {DELETE} Delete Vote<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseorg_detail_delete" class="collapse" aria-labelledby="headingTwo_collapseorg_detail_delete"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/{id}/</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseorg_detail_delete" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseorg_detail_delete" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseorg_detail_delete" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseorg_detail_delete">
+                                                    the  <strong> {id}</strong> expected is the <strong>id</strong> of an existing Vote
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseorg_detail_delete">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                   
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseorg_detail_delete">
+                                                    <p>
+                                                        <strong>status:</strong> 204 NO_CONTENT
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    
+                                                    <p>
+                                                        <strong>response error:</strong> status 404 <br>
+                                                        
+                                                            { <br>
+                                                                "detail": "Not found." <br>
+                                                            } <br>
+                                                    </p>
+
+                                                    <p>
+                                                        <strong>response error:</strong> status 400 <br>
+                                                        
+                                                            { <br>
+                                                                "detail": "Bad request" <br>
+                                                            } <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOneitemupdate">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-warning" data-toggle="collapse"
+                                            href="#collapseOneitemupdate" aria-expanded="false" aria-controls="collapseOneitemupdate">
+                                           {PUT} Update Vote<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOneitemupdate" class="collapse" aria-labelledby="headingOneitemupdate"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> 
+                                               
+                                                <code>
+                                                    <span>url=></span>
+                                                    {BASE_URL}/{id}/
+                                                </code>
+                                                   
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemupdate" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemupdate" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemupdate" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemupdate">
+                                                    <strong>Body</strong><br>
+                                                    data expected by the end point <br>
+                                                    *update fields are not all mandatory* <br>
+                                                    <code>
+                                                        <code>
+                                                            { <br>
+                                                                "question":"string", <br>
+                                                                "description":"string", <br>
+                                                                "expiry_date": Vote expiry datetime ISO standard time e.g 2020-09-15T08:45:56.555Z, <br>
+                                                                "vote_start_date": Vote start datetime ISO standard time e.g 2020-09-15T08:45:56.555Z, <br>
+                                                            } <br>
+                                                        </code>
+                                                    </code>
+                                                </div>
+                                                <div class="tab-pane" id="profileitemupdate">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemupdate">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> agenda item<br>
+                                                        <code>
+                                                            { <br>
+                                                                "vote":vote, <br>
+                                                                "code":1
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+
+                                                    <p>
+                                                        <strong>status:</strong> 400 BAD REQUEST
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> errors<br>
+                                                        <code>
+                                                            { <br>
+                                                                "errors":errors, <br>
+                                                                "code":0
+                                                            }
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOnegetmeeting">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse"
+                                            href="#collapsegetmeeting" aria-expanded="false" aria-controls="collapsegetmeeting">
+                                           {GET} Get Vote<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsegetmeeting" class="collapse" aria-labelledby="headinggetmeeting"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/{id}/
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homegetmeeting" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profilegetmeeting" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsgetmeeting" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homegetmeeting">
+                                                        <strong>Body</strong><br>
+                                                        <code>
+                                                            id expected should be of an existing Vote
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profilegetmeeting">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                        <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsgetmeeting">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> returns a Vote instance<br>
+                                                        <code>
+                                                            { <br>
+                                                                "id":"integer"<br>
+                                                                "question:"string"<br>
+                                                                "description":"string"<br>
+                                                                "expiry_date":"datetime ISO standard time e.g 2020-09-15T08:45:56.555Z"<br>
+                                                                "vote_start_date":"datetime ISO standard time e.g 2020-09-15T08:45:56.555Z"<br>
+                                                                "created_by":"id"<br>
+                                                            }
+                                                        </code>
+                                                        
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+
+                            
+
+                    </div> <!-- end col -->
+
+                </div>
+                <!-- end row-->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="{% static 'demo/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static 'demo/assets/libs/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'demo/assets/libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="{% static 'demo/dist/js/app-style-switcher.js' %}"></script>
+    <script src="{% static 'demo/dist/js/feather.min.js' %}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{% static 'demo/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js' %}"></script>
+    <script src="{% static 'demo/assets/extra-libs/sparkline/sparkline.js' %}"></script>
+    <!--Wave Effects -->
+    <!-- themejs -->
+    <!--Menu sidebar -->
+    <script src="{% static 'demo/dist/js/sidebarmenu.js' %}"></script>
+    <!--Custom JavaScript -->
+    <script src="{% static 'demo/dist/js/custom.min.js' %}"></script>
+    <!-- This Page JS -->
+    <script src="{% static 'demo/assets/extra-libs/prism/prism.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from www.adminmart.com/src/html/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jan 2020 10:54:44 GMT -->
+</html>

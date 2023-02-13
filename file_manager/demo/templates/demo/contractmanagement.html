@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+
+<!-- Mirrored from www.adminmart.com/src/html/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jan 2020 10:54:44 GMT -->
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'demo/assets/images/favicon.png' %}">
+    <title>Eboard api documentation</title>
+    <!-- Custom CSS -->
+    <link href="{% static 'demo/dist/css/style.min.css' %}" rel="stylesheet">
+    <!-- This Page CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'demo/assets/extra-libs/prism/prism.css'%}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-6">
+                        <h4 class="mb-4">Contract Management<br>
+                            <strong>BASE_URL=> api/contract/</strong>
+                        </h4>
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="accordion" class="custom-accordion mb-4">
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOneitem">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-success" data-toggle="collapse"
+                                            href="#collapseOneitem" aria-expanded="false" aria-controls="collapseOneitem">
+                                           {POST} Create Contract<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOneitem" class="collapse" aria-labelledby="headingOneitem"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <code><span>url=></span>
+                                                {BASE_URL}/list/ </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitem" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitem" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitem" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitem">
+                                                        <strong>Body</strong><br>
+                                                        data expected by the end point <br>
+                                                        <code>
+                                                            { <br>
+                                                                "contractor_name":"string", <br>
+                                                                "contractor_address":"String", <br>
+                                                                "owning_department": "String", <br>
+                                                                "contract_description": "Text", <br>
+                                                                "commencement_date":"date_string iso standard", <br>
+                                                                "end_date":"date_string iso standard", <br>
+                                                                "resubmitable":"boolean", <br>
+                                                                "reviewers":[list of reviewers, user ids], <br>
+                                                                "review_accept_threshold":"Integer=> number of review accept required to pass the contract as accepted on review", <br>
+                                                                "review_reject_threshold":"Integer=> number of review rejects required to pass the contract as rejected on review", <br>
+                                                                "approvers":[list of approvers, user ids], <br>
+                                                                "approval_accept_threshold":"Integer=> number of approval accept required to pass the contract as accepted on approval", <br>
+                                                                "approval_reject_threshold":"Integer=> number of approval rejects required to pass the contract as rejected on approval", <br>
+                                                            } <br>
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profileitem">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitem">
+                                                    <p>
+                                                        <strong>status:</strong> 201 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> contract created<br>
+                                                        <code>
+                                                            { <br>
+                                                                "contract_details":contract,<br>
+                                                                "code":1, <br>
+                                                                "message":message, <br>
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                    <p>
+                                                        <strong>status:</strong> 400 BAD_REQUEST
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> errors<br>
+                                                        <code>
+                                                            { <br>
+                                                                "errors":error,<br>
+                                                                "code":0,<br>
+                                                                "message":message, <br>
+                                                            }
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingsubOneitemlist">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-secondary" data-toggle="collapse"
+                                            href="#collapsesubOneitemlist" aria-expanded="false" aria-controls="collapsesubOneitemlist">
+                                           {GET} list All Contracts<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsesubOneitemlist" class="collapse" aria-labelledby="headingsubOneitemlist"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <code><span>url=></span>
+                                                {BASE_URL}/listall/ </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemsublist" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemsublist" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemsublist" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemsublist">
+                                                </div>
+                                                <div class="tab-pane" id="profileitemsublist">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemsublist">
+                                                    <p>
+                                                        <strong>status:</strong> 200 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> List of all contracts created. Use <code>"execution_state"</code> to identify the current state of the contract<br>
+                                                        
+                                                        <code>
+                                                            { <br>
+                                                                "contracts":[all contracts]<br>
+                                                            }
+                                                        </code>
+                                                        
+                                                        <code>
+                                                            <h5>Contract State include:</h5>
+                                                                <br>"pending"<br>
+                                                                <br>"review"<br>
+                                                                <br>"approval"<br>
+                                                                <br>"execution"<br>
+                                                                <br>"rejected_review"<br>
+                                                                <br>"rejected_approval"<br>
+                                                           
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingsubOneitemlist">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-secondary" data-toggle="collapse"
+                                            href="#collapsesubOneitemlist" aria-expanded="false" aria-controls="collapsesubOneitemlist">
+                                           {GET} list User Contracts Assignments <span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsesubOneitemlist" class="collapse" aria-labelledby="headingsubOneitemlist"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <code><span>url=></span>
+                                                {BASE_URL}/list/ </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemsublist" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemsublist" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemsublist" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemsublist">
+                                                </div>
+                                                <div class="tab-pane" id="profileitemsublist">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemsublist">
+                                                    <p>
+                                                        <strong>status:</strong> 200 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> Contract assignments to a user both review and approval assignments list<br>
+                                                        <code>
+                                                            { <br>
+                                                                "contracts":[contract assignments]<br>
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOneitemupdate">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-warning" data-toggle="collapse"
+                                            href="#collapseOneitemupdate" aria-expanded="false" aria-controls="collapseOneitemupdate">
+                                           {PUT} Update Contract<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOneitemupdate" class="collapse" aria-labelledby="headingOneitemupdate"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> 
+                                               
+                                                <code>
+                                                    <span>url=></span>
+                                                    {BASE_URL}/{contract_id}
+                                                </code>
+                                                   
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemupdate" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemupdate" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemupdate" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemupdate">
+                                                    <strong>Body</strong><br>
+                                                    data expected by the end point <br>
+                                                    *update fields are not all mandatory* <br>
+                                                    <code>
+                                                        <code>
+                                                            { <br>
+                                                                "contractor_name":"string", <br>
+                                                                "contractor_address":"String", <br>
+                                                                "owning_department": "String", <br>
+                                                                "contract_description": "Text", <br>
+                                                                "commencement_date":"date_string iso standard", <br>
+                                                                "end_date":"date_string iso standard", <br>
+                                                                "resubmitable":"boolean", <br>
+                                                                "reviewers":[list of reviewers, user ids], <br>
+                                                                "review_accept_threshold":"Integer=> number of review accept required to pass the contract as accepted on review", <br>
+                                                                "review_reject_threshold":"Integer=> number of review rejects required to pass the contract as rejected on review", <br>
+                                                                "approvers":[list of approvers, user ids], <br>
+                                                                "approval_accept_threshold":"Integer=> number of approval accept required to pass the contract as accepted on approval", <br>
+                                                                "approval_reject_threshold":"Integer=> number of approval rejects required to pass the contract as rejected on approval", <br>
+                                                            } <br>
+                                                        </code>
+                                                    </code>
+                                                </div>
+                                                <div class="tab-pane" id="profileitemupdate">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemupdate">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> agenda item<br>
+                                                        <code>
+                                                            { <br>
+                                                                "contract":contract, <br>
+                                                                "code":1
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+
+                                                    <p>
+                                                        <strong>status:</strong> 400 BAD REQUEST
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> errors<br>
+                                                        <code>
+                                                            { <br>
+                                                                "errors":errors, <br>
+                                                                "code":0
+                                                            }
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingsubOneitem">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-success" data-toggle="collapse"
+                                            href="#collapsesubOneitem" aria-expanded="false" aria-controls="collapsesubOneitem">
+                                           {POST} Create Contract Attachment<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsesubOneitem" class="collapse" aria-labelledby="headingsubOneitem"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <code><span>url=></span>
+                                                {BASE_URL}/attachments/ </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemsub" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemsub" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemsub" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemsub">
+                                                        <strong>Body</strong><br>
+                                                        data expected by the end point <br>
+                                                        attachments are stored as blob
+                                                        <code>
+                                                            { <br>
+                                                                "name":"string", <br>
+                                                                "document_attached":"dataurl/blob data", <br>
+                                                                "contract":'contract_id', <br>
+
+                                                            } <br>
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profileitemsub">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemsub">
+                                                    <p>
+                                                        <strong>status:</strong> 201 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> attachment created <br>
+                                                        <code>
+                                                            { <br>
+                                                                "message":message,<br>
+                                                                "attachmnent":attachment,<br>
+                                                                "code":1
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                    <p>
+                                                        <strong>status:</strong> 400 BAD_REQUEST
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> errors<br>
+                                                        <code>
+                                                            { <br>
+                                                                "message":message,<br>
+                                                                "errors":error,<br>
+                                                                "code":0
+                                                            }
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOneitemlist">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-secondary" data-toggle="collapse"
+                                            href="#collapseOneitemlist" aria-expanded="false" aria-controls="collapseOneitemlist">
+                                           {GET} list Contract Attachments<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOneitemlist" class="collapse" aria-labelledby="headingOneitemlist"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/{contract_id}/attachments
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemlist" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemlist" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemlist" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemlist">
+                                                    
+                                                </div>
+                                                <div class="tab-pane" id="profileitemlist">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemlist">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> attachments<br>
+                                                        <code>
+                                                            { <br>
+                                                                "attachments":[attachments]<br>
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseorg_detail_delete">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseorg_detail_delete" aria-expanded="false"
+                                            aria-controls="collapseorg_detail_delete">
+                                            {DELETE} Delete Contract<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseorg_detail_delete" class="collapse" aria-labelledby="headingTwo_collapseorg_detail_delete"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/{id}/</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseorg_detail_delete" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseorg_detail_delete" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseorg_detail_delete" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseorg_detail_delete">
+                                                    the  <strong> {id}</strong> expected is the <strong>id</strong> of an existing Contract
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseorg_detail_delete">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                   
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseorg_detail_delete">
+                                                    <p>
+                                                        <strong>status:</strong> 204 NO_CONTENT
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    
+                                                    <p>
+                                                        <strong>response error:</strong> status 404 <br>
+                                                        
+                                                            { <br>
+                                                                "detail": "Not found." <br>
+                                                            } <br>
+                                                    </p>
+
+                                                    <p>
+                                                        <strong>response error:</strong> status 400 <br>
+                                                        
+                                                            { <br>
+                                                                "detail": "Bad request" <br>
+                                                            } <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> 
+
+                            <!-- 
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingsubOneitemattach">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-success" data-toggle="collapse"
+                                            href="#collapsesubOneitemattach" aria-expanded="false" aria-controls="collapsesubOneitemattach">
+                                           {POST} Attach Sub Agenda to meeting <span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsesubOneitemattach" class="collapse" aria-labelledby="headingsubOneitemattach"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <code><span>url=></span>
+                                                {BASE_URL}/subagendas/ </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemsubattach" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemsubattach" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemsubattach" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemsubattach">
+                                                        <strong>Body</strong><br>
+                                                        data expected by the end point <br>
+                                                        <code>
+                                                            { <br>
+                                                                "meeting":int(meeting id), <br>
+                                                                'subitem':int(sub agenda item), <br>
+                                                            }
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profileitemsubattach">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemsubattach">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> result<br>
+                                                        <code>
+                                                            { <br>
+                                                                'code': 1, <br>
+                                                                'message': "Successfully attached the sub agenda item" <br>
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingsubOneitemdeattach">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-danger" data-toggle="collapse"
+                                            href="#collapsesubOneitemdeattach" aria-expanded="false" aria-controls="collapsesubOneitemdeattach">
+                                           {DELETE} Remove Sub Agenda from meeting <span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsesubOneitemdeattach" class="collapse" aria-labelledby="headingsubOneitemdeattach"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <code><span>url=></span>
+                                                {BASE_URL}/subagendas/ </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemsubdeattach" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemsubdeattach" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemsubdeattach" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemsubdeattach">
+                                                        <strong>Body</strong><br>
+                                                        data expected by the end point <br>
+                                                        <code>
+                                                            { <br>
+                                                                "meeting":int(meeting id), <br>
+                                                                'subitem':int(sub agenda item), <br>
+                                                            }
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profileitemsubdeattach">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemsubdeattach">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> result<br>
+                                                        <code>
+                                                            { <br>
+                                                                'code': 1, <br>
+                                                                'message': "Successfully removed the item from available list" <br>
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOneitemget">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-info" data-toggle="collapse"
+                                            href="#collapseOneitemget" aria-expanded="false" aria-controls="collapseOneitemget">
+                                           {GET} Get Agenda Item<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOneitemget" class="collapse" aria-labelledby="headingOneitemget"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> 
+                                               
+                                                <code>
+                                                    <span>url=></span>
+                                                    {BASE_URL}/agendaitems/{id}
+                                                </code>
+                                                   
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemget" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemget" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemget" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemget">
+                                                        <strong>Body</strong><br>
+                                                        
+                                                        <code>
+                                                            {id} expected should be on existing agenda item
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profileitemget">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemget">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> agenda item<br>
+                                                        <code>
+                                                            { <br>
+                                                                "item":{ <br>
+                                                                    "item":"string" <br>
+                                                                }
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                    <p>
+                                                        <strong>status:</strong> 404 not found
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> errors<br>
+                                                        <code>
+                                                            { <br>
+                                                                "errors":"detail not found"
+                                                            }
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOneitemupdate">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-warning" data-toggle="collapse"
+                                            href="#collapseOneitemupdate" aria-expanded="false" aria-controls="collapseOneitemupdate">
+                                           {PUT} Update Agenda Item<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOneitemupdate" class="collapse" aria-labelledby="headingOneitemupdate"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> 
+                                               
+                                                <code>
+                                                    <span>url=></span>
+                                                    {BASE_URL}/agendaitems/{id}
+                                                </code>
+                                                   
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeitemupdate" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileitemupdate" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsitemupdate" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeitemupdate">
+                                                    <strong>Body</strong><br>
+                                                    data expected by the end point <br>
+                                                    <code>
+                                                        { <br>
+                                                            "item":"string" <br>
+                                                        } <br>
+                                                    </code>
+                                                </div>
+                                                <div class="tab-pane" id="profileitemupdate">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsitemupdate">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> agenda item<br>
+                                                        <code>
+                                                            { <br>
+                                                                "agenda_item":{ <br>
+                                                                    "item":"string" <br>
+                                                                },
+                                                                "code":1
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                    <p>
+                                                        <strong>status:</strong> 404 not found
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> errors<br>
+                                                        <code>
+                                                            { <br>
+                                                                "errors":"detail not found" <br>
+                                                            }
+                                                        </code>
+                                                    </p>
+
+                                                    <p>
+                                                        <strong>status:</strong> 400 BAD REQUEST
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> errors<br>
+                                                        <code>
+                                                            { <br>
+                                                                "errors":"detail not found", <br>
+                                                                "code":1 <br>
+                                                            }
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> -->
+<!-- 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-success" data-toggle="collapse"
+                                            href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                           {POST} Create Meeting<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/list/
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home">
+                                                        <strong>Body</strong><br>
+                                                        data expected by the end point <br>
+                                                        <code>
+                                                            { <br>
+                                                                "name":__name of the meeting, <br>
+                                                                "start_time":__meeting start time ISO standard time e.g 2020-09-15T08:45:56.555Z , <br>
+                                                                "end_time":__meeting end time ISO standard time e.g 2020-10-15T08:45:56.555Z, <br>
+                                                                <strong>(optional)</strong>"agenda_items":[__list of agenda items ids], <br>
+                                                                "created_by":__ user id if request is not authenticated <br>,
+                                                                "location":meeting location <br>
+                                                            }
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profile">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings">
+                                                    <p>
+                                                        <strong>status:</strong> 201 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> meeting created<br>
+                                                        <code>
+                                                            { <br>
+                                                                "meeting":{ <br>
+                                                                    "name":__name of the meeting, <br>
+                                                                    "start_time":__meeting start time ISO standard time e.g 2020-09-15T08:45:56.555Z , <br>
+                                                                    "end_time":__meeting end time ISO standard time e.g 2020-10-15T08:45:56.555Z, <br>
+                                                                    "agenda_items":[__list of agenda items ids], <br>
+                                                                    "created_by":user <br>
+                                                                },<br>
+                                                                "code":1
+                                                            }
+                                                        </code>
+ 
+                                                    </p>
+                                                    <p>
+                                                        <strong>status:</strong> 400 BAD_REQUEST
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> errors<br>
+                                                        <code>
+                                                            { <br>
+                                                                "errors":"error",<br>
+                                                                "code":0
+                                                            }
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-secondary" data-toggle="collapse"
+                                            href="#collapseroles" aria-expanded="false" aria-controls="collapseroles">
+                                           {GET} List All Meetings<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseroles" class="collapse" aria-labelledby="headingroles"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/list/
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeroles" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileroles" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsroles" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeroles">
+                                                        <strong>Body</strong><br>
+                                                </div>
+                                                <div class="tab-pane" id="profileroles">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                        <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsroles">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> List of all current meetings<br>
+                                                        <code>
+                                                            {<br>
+                                                                "meetings":[ <br>
+                                                                                { <br>
+                                                                                    "id":"int" <br>
+                                                                                    "name":__name of the meeting, <br>
+                                                                                    "start_time":__meeting start time ISO standard time e.g 2020-09-15T08:45:56.555Z , <br>
+                                                                                    "end_time":__meeting end time ISO standard time e.g 2020-10-15T08:45:56.555Z, <br>
+                                                                                    "agenda_items":[__list of agenda items ids], <br>
+                                                                                    "created_by":user_id <br>
+                                                                                },<br>
+                                                                            ] <br>
+                                                            }
+                                                            
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+ -->
+                            <!-- <div class="card mb-0">
+                                <div class="card-header" id="headingOnegetmeeting">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse"
+                                            href="#collapsegetmeeting" aria-expanded="false" aria-controls="collapsegetmeeting">
+                                           {GET} Get Meeting<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsegetmeeting" class="collapse" aria-labelledby="headinggetmeeting"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/{id}/
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homegetmeeting" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profilegetmeeting" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsgetmeeting" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homegetmeeting">
+                                                        <strong>Body</strong><br>
+                                                        <code>
+                                                            id expected should be of an existing meeting
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profilegetmeeting">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                        <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsgetmeeting">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> returns the meeting instance<br>
+                                                        <code>
+                                                            {<br>
+                                                                "meeting":
+                                                                                { <br>
+                                                                                    "id":"int" <br>
+                                                                                    "name":__name of the meeting, <br>
+                                                                                    "start_time":__meeting start time ISO standard time e.g 2020-09-15T08:45:56.555Z , <br>
+                                                                                    "end_time":__meeting end time ISO standard time e.g 2020-10-15T08:45:56.555Z, <br>
+                                                                                    "agenda_items":[__list of agenda items ids], <br>
+                                                                                    "created_by":user_id <br>
+                                                                                },<br>
+                                                                            
+                                                            }
+                                                            
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOnegetmeetinguser">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-secondary" data-toggle="collapse"
+                                            href="#collapsegetmeetinguser" aria-expanded="false" aria-controls="collapsegetmeetinguser">
+                                           {GET} Get User Meetings<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsegetmeetinguser" class="collapse" aria-labelledby="headinggetmeetinguser"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/list/{id}/
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homegetmeetinguser" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profilegetmeetinguser" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsgetmeetinguser" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homegetmeetinguser">
+                                                        <strong>Body</strong><br>
+                                                        <code>
+                                                            {id} expected should be for an existing user
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profilegetmeetinguser">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                        <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsgetmeetinguser">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> List of all meetings created by that user<br>
+                                                        <code>
+                                                            {<br>
+                                                                "meetings":[ <br>
+                                                                                { <br>
+                                                                                    "id":"int" <br>
+                                                                                    "name":__name of the meeting, <br>
+                                                                                    "start_time":__meeting start time ISO standard time e.g 2020-09-15T08:45:56.555Z , <br>
+                                                                                    "end_time":__meeting end time ISO standard time e.g 2020-10-15T08:45:56.555Z, <br>
+                                                                                    "agenda_items":[__list of agenda items ids], <br>
+                                                                                    "created_by":user_id <br>
+                                                                                },<br>
+                                                                            ] <br>
+                                                            }
+                                                            
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOnecreateinvitation">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-success" data-toggle="collapse"
+                                            href="#collapsecreateinvitation" aria-expanded="false" aria-controls="collapsecreateinvitation">
+                                           {POST} Send Meeting Invitations<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsecreateinvitation" class="collapse" aria-labelledby="headingcreateinvitation"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/{meeting_id}/invitations/
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homecreateinvitation" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profilecreateinvitation" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingscreateinvitation" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homecreateinvitation">
+                                                        <strong>Body</strong><br>
+                                                        <code>
+                                                            { 
+                                                                <br> 'invited_by':"int" =>can be null if the request is authenticated, <br>
+                                                                    'participants':[_list of user ids]=>list of users' ids that are to invited <br> 
+                                                             }
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profilecreateinvitation">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                        <br>
+                                                        <code>
+                                                            Authorization: Token {token}
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingscreateinvitation">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> Returns a count of invitations sent<br>
+                                                        <code>
+                                                            {<br>
+                                                                "message":string, <br>
+                                                                "sent":"invitations count (int)", <br>
+                                                                "code":"int" <br>
+                                                            }
+                                                            
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOnegetinvitation">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-secondary" data-toggle="collapse"
+                                            href="#collapsegetinvitation" aria-expanded="false" aria-controls="collapsegetinvitation">
+                                           {GET} Get Meeting Invitations<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsegetinvitation" class="collapse" aria-labelledby="headinggetinvitation"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/{meeting_id}/invitations/
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homegetinvitation" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profilegetinvitation" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsgetinvitation" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homegetinvitation">
+                                                        <strong>Body</strong><br>
+                                                        <code>
+                                                            meeting_id expected is one of an existing meeting
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profilegetinvitation">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                        <br>
+                                                        <code>
+                                                            Authorization: Token {token}
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsgetinvitation">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> Returns a list of invitations<br>
+                                                        <code>
+                                                            {<br>
+                                                                "invitations":[list of invitations] <br>
+                                                            }
+                                                            
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOneaddagenda">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-success" data-toggle="collapse"
+                                            href="#collapseaddagenda" aria-expanded="false" aria-controls="collapseaddagenda">
+                                           {POST} Add Agenda Items to a meeting<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseaddagenda" class="collapse" aria-labelledby="headingaddagenda"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/{meeting_id}/agendaitems/
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homeaddagenda" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profileaddagenda" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsaddagenda" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homeaddagenda">
+                                                        <strong>Body</strong><br>
+                                                        <code>
+                                                            meeting_id expected is one of an existing meeting <br>
+                                                            { <br>
+                                                                'items':[__list of items ids] <br>
+                                                            } <br>
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profileaddagenda">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                        <br>
+                                                        <code>
+                                                            Authorization: Token {token}
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsaddagenda">
+                                                    <p>
+                                                        <strong>status:</strong> 201 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> Returns an updated meeting<br>
+                                                        <code>
+                                                            { <br> 'meeting':updated_meeting, <br> 'code':1 <br> }
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingdeleteagenda">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-danger" data-toggle="collapse"
+                                            href="#collapsedeleteagenda" aria-expanded="false" aria-controls="collapsedeleteagenda">
+                                           {DELETE} Remove Agenda Items from a meeting<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsedeleteagenda" class="collapse" aria-labelledby="headingdeleteagenda"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                <code>
+                                                    {BASE_URL}/{meeting_id}/agendaitems/{item_id}/
+                                                </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homedeleteagenda" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profiledeleteagenda" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsdeleteagenda" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homedeleteagenda">
+                                                        <strong>Body</strong><br>
+                                                        <code>
+                                                            meeting_id expected is one of an existing meeting <br>
+                                                            { <br>
+                                                                'items':[__list of items ids] <br>
+                                                            } <br>
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profiledeleteagenda">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                        <br>
+                                                        <code>
+                                                            Authorization: Token {token}
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsdeleteagenda">
+                                                    <p>
+                                                        <strong>status:</strong> 204 NO CONTENT
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> Returns status of operation<br>
+                                                        <code>
+                                                            { <br> 'code':'int' <br> }
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headinggetagendauploads">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-secondary" data-toggle="collapse"
+                                            href="#collapsegetagendauploads" aria-expanded="false" aria-controls="collapsegetagendauploads">
+                                           {GET} Get agenda item uploads in a meeting<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsegetagendauploads" class="collapse" aria-labelledby="headinggetagendauploads"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                <code>
+                                                    {BASE_URL}/{agenda}/uploads/{meeting}/
+                                                </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homegetagendauploads" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profilegetagendauploads" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingsgetagendauploads" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homegetagendauploads">
+                                                        <strong>Body</strong><br>
+                                                        <code>
+                                                            agenda expected is one of an existing agenda_item <br>
+                                                            meeting expected is one of an existing meeting
+                                                            
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profilegetagendauploads">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                        <br>
+                                                        <code>
+                                                            Authorization: Token {token}
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingsgetagendauploads">
+                                                    <p>
+                                                        <strong>status:</strong> 204 NO CONTENT
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> Returns list of agenda documents for the meeting specified<br>
+                                                        <code>
+                                                            { <br> 'agenda_item_docs':[list] <br> }
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> 
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingpostagendauploads">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2 text-success" data-toggle="collapse"
+                                            href="#collapsepostagendauploads" aria-expanded="false" aria-controls="collapsepostagendauploads">
+                                           {POST} Upload doc to agenda item in a meeting<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapsepostagendauploads" class="collapse" aria-labelledby="headingpostagendauploads"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                <code>
+                                                    {BASE_URL}/{agenda}/uploads/{meeting}/
+                                                </code>
+                                            </h4>
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#homepostagendauploads" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profilepostagendauploads" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settingspostagendauploads" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="homepostagendauploads">
+                                                        <strong>Body</strong><br>
+                                                        <code>
+                                                            agenda expected is one of an existing agenda_item <br>
+                                                            meeting expected is one of an existing meeting <br>
+                                                            {
+                                                                <br>"doc_name":"String name of the document",
+                                                                <br>"agenda_item_doc":"Text File blob data, this must be a data url" <br>
+                                                            }
+                                                        </code>
+                                                </div>
+                                                <div class="tab-pane" id="profilepostagendauploads">
+                                                    <p>
+                                                        Content-Type: application/json
+                                                        <br>
+                                                        <code>
+                                                            Authorization: Token {token}
+                                                        </code>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settingspostagendauploads">
+                                                    <p>
+                                                        <strong>status:</strong> 201 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> Returns a created agenda item<br>
+                                                        <code>
+                                                            { <br> 'agenda_doc':{} <br> }
+                                                        </code>
+ 
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> 
+                                    </div> 
+                                </div>
+                            </div> --> 
+
+                        </div> <!-- end custom accordions-->
+                    </div> <!-- end col -->
+
+                </div>
+                <!-- end row-->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="{% static 'demo/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static 'demo/assets/libs/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'demo/assets/libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="{% static 'demo/dist/js/app-style-switcher.js' %}"></script>
+    <script src="{% static 'demo/dist/js/feather.min.js' %}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{% static 'demo/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js' %}"></script>
+    <script src="{% static 'demo/assets/extra-libs/sparkline/sparkline.js' %}"></script>
+    <!--Wave Effects -->
+    <!-- themejs -->
+    <!--Menu sidebar -->
+    <script src="{% static 'demo/dist/js/sidebarmenu.js' %}"></script>
+    <!--Custom JavaScript -->
+    <script src="{% static 'demo/dist/js/custom.min.js' %}"></script>
+    <!-- This Page JS -->
+    <script src="{% static 'demo/assets/extra-libs/prism/prism.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from www.adminmart.com/src/html/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jan 2020 10:54:44 GMT -->
+</html>

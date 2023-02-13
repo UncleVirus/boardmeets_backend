@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+
+<!-- Mirrored from www.adminmart.com/src/html/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jan 2020 10:54:44 GMT -->
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'demo/assets/images/favicon.png' %}">
+    <title>Eboard api documentation</title>
+    <!-- Custom CSS -->
+    <link href="{% static 'demo/dist/css/style.min.css' %}" rel="stylesheet">
+    <!-- This Page CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'demo/assets/extra-libs/prism/prism.css'%}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+        
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-6">
+                        <h4 class="mb-4">Registration<br>
+                            <strong>BASE_URL=> /api/people</strong>
+                        </h4>
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="accordion" class="custom-accordion mb-4">
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title d-block pt-2 pb-2" data-toggle="collapse"
+                                            href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                           {POST} create organization<span class="float-right"><i class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3">
+                                                <code>
+                                                    <span>url=></span>
+                                                    {BASE_URL}/organizations/
+                                                </code>
+                                                </h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home">
+                                                    <strong>Body</strong><br>
+                                                    data expected by the end point <br>
+                                                    <code>
+
+                                                        { <br>
+                                                            "admin_email":"valid mail", <br>
+                                                            "admin_username":"string", <br>
+                                                            "admin_password":"password", <br>
+                                                            "admin_first_name":"string", <br>
+                                                            "admin_last_name":"string", <br>
+                                                            'name':"string",<br>
+                                                            'time_zone':'string'<br>
+                                                        }
+                                                    </code>
+                                                </div>
+                                                <div class="tab-pane show active" id="profile">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> created organization and account <br>
+                                                        <code>
+
+                                                            {  <br> <strong>'messages'</strong>: 'Organization Registration successful, admin account created', <br>
+                                                            <strong>'code'</strong>: 1, <br>
+                                                            <strong>'administrator'</strong>:{ 
+                                                                <br> 'id': "integer", <br>
+                                                                                'username': 'string', <br>
+                                                                                'date_joined': 'date iso format', <br>
+                                                                                'email': 'email' <br>
+                                                                            }, <br>
+                                                                            <strong>'organization'</strong>:{ <br>
+                                                                                'id': "integer", <br>
+                                                                                'name': 'string', <br>
+                                                                                'time_zone': 'string', <br>
+                                                                                'administrator': "interger"} <br> 
+                                                                            }
+                                                                        </code>
+                                                                            
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div> <!-- end card-body-->
+                                                        </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            {GET} get organizations<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> 
+                                                <code>
+                                                    <span>url=></span>
+                                                    {BASE_URL}/organizations/
+                                                </code>
+
+                                            </h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home2" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile2" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings2" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home2">
+                                                    
+                                                </div>
+                                                <div class="tab-pane show active" id="profile2">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings2">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> list of organizations <br>
+                                                        
+                                                            <code>
+
+                                                                [{ <br>
+                                                                    "id": "integer",<br>
+                                                                    "name": "string",<br>
+                                                                    "time_zone": "string"<br>
+                                                                }] <br>
+                                                            </code>
+                                                            </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseorg_detail">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseorg_detail" aria-expanded="false"
+                                            aria-controls="collapseorg_detail">
+                                            {GET} get organization<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseorg_detail" class="collapse" aria-labelledby="headingTwo_collapseorg_detail"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3">
+                                                <code>
+                                                    <span>url=></span>
+                                                    {BASE_URL}/organizations/{id}/
+                                                </code> 
+                                            </h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseorg_detail" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseorg_detail" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseorg_detail" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseorg_detail">
+                                                    the  <strong> {id}</strong> expected is the <strong>id</strong> of an existing organization
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseorg_detail">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                    <p>
+                                                        <strong>
+                                                            Authorization token string is in the format of 'Token space usertoken'
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseorg_detail">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> organization <br>
+                                                        
+                                                            { <br>
+                                                                "id": "integer",<br>
+                                                                "name": "string",<br>
+                                                                "time_zone": "string"<br>
+                                                            } <br>
+                                                    </p>
+
+                                                    <p>
+                                                        <strong>response error:</strong> status 404 <br>
+                                                        
+                                                            { <br>
+                                                                "detail": "Not found." <br>
+                                                            } <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseorg_detail_put">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseorg_detail_put" aria-expanded="false"
+                                            aria-controls="collapseorg_detail_put">
+                                            {PUT} update organization<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseorg_detail_put" class="collapse" aria-labelledby="headingTwo_collapseorg_detail_put"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/organizations/{id}/</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseorg_detail_put" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseorg_detail_put" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseorg_detail_put" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseorg_detail_put">
+                                                    the  <strong> {id}</strong> expected is the <strong>id</strong> of an existing organization
+
+                                                    <br>
+                                                    <p>
+                                                        { <br>
+                                                            "name": "string",<br>
+                                                            "time_zone": "string"<br>
+                                                        } <br>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseorg_detail_put">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                    <p>
+                                                        <strong>
+                                                            Authorization token string is in the format of 'Token space usertoken'
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseorg_detail_put">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> updated organization <br>
+                                                        
+                                                            { <br>
+                                                                "id": "integer",<br>
+                                                                "name": "string",<br>
+                                                                "time_zone": "string"<br>
+                                                            } <br>
+                                                    </p>
+
+                                                    <p>
+                                                        <strong>response error:</strong> status 404 <br>
+                                                        
+                                                            { <br>
+                                                                "detail": "Not found." <br>
+                                                            } <br>
+                                                    </p>
+
+                                                    <p>
+                                                        <strong>response error:</strong> status 400 <br>
+                                                        
+                                                            { <br>
+                                                                "detail": "Bad request" <br>
+                                                            } <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseorg_detail_delete">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-title collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseorg_detail_delete" aria-expanded="false"
+                                            aria-controls="collapseorg_detail_delete">
+                                            {DELETE} delete organization<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseorg_detail_delete" class="collapse" aria-labelledby="headingTwo_collapseorg_detail_delete"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/organizations/{id}/</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseorg_detail_delete" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseorg_detail_delete" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseorg_detail_delete" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseorg_detail_delete">
+                                                    the  <strong> {id}</strong> expected is the <strong>id</strong> of an existing organization
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseorg_detail_delete">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                    <p>
+                                                        <strong>
+                                                            Authorization token string is in the format of 'Token space usertoken'
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseorg_detail_delete">
+                                                    <p>
+                                                        <strong>status:</strong> 204 NO_CONTENT
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    
+                                                    <p>
+                                                        <strong>response error:</strong> status 404 <br>
+                                                        
+                                                            { <br>
+                                                                "detail": "Not found." <br>
+                                                            } <br>
+                                                    </p>
+
+                                                    <p>
+                                                        <strong>response error:</strong> status 400 <br>
+                                                        
+                                                            { <br>
+                                                                "detail": "Bad request" <br>
+                                                            } <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseuser">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-tsitle collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseuser" aria-expanded="false"
+                                            aria-controls="collapseuser">
+                                            {GET} List Users<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseuser" class="collapse" aria-labelledby="headingTwo_collapseuser"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/users/</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseuser" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseuser" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseuser" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseuser">
+
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseuser">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                    <p>
+                                                        <strong>
+                                                            Authorization token string is in the format of 'Token space usertoken'
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseuser">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> list of users <br>
+                                                        
+                                                            [{ <br>
+                                                                "id": "integer",<br>
+                                                                "username": "string",<br>
+                                                                "date_joined": "date string iso format"<br>
+                                                                "email": "string"<br>
+                                                            }] <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseusercreate">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-tsitle collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseusercreate" aria-expanded="false"
+                                            aria-controls="collapseusercreate">
+                                            {POST} Create User and profile<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseusercreate" class="collapse" aria-labelledby="headingTwo_collapseusercreate"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/users/</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseusercreate" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseusercreate" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseusercreate" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseusercreate">
+                                                    <strong>Body</strong><br>
+                                                    data expected by the end point <br>
+                                                    { <br>
+                                                    'email':"string",<br>
+                                                    'username':'string',<br>
+                                                    'password':'string',<br>
+                                                    'organization':'interger',<br>
+                                                    'phone_number':'string',<br>
+                                                    'period':'string', <br>
+                                                    'first_name':'string',<br>
+                                                    'last_name':'string'<br>
+                                                    }
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseusercreate">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                    <p>
+                                                        <strong>
+                                                            Authorization token string is in the format of 'Token space usertoken'
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseusercreate">
+                                                    <p>
+                                                        <strong>status:</strong> 201 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> created user details <br>
+                                                        
+                                                        {
+                                                            'messages': "Registration successful, user account and profile created",<br>
+                                                            'code': 1,<br>
+                                                            'user':{user_data},<br>
+                                                            'profile':{profile_data}<br>
+                                                        }
+                                                    </p>
+                                                    <p>
+                                                        <strong>ERROR:</strong> 400 BAD REQUEST
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> error <br>
+                                                        
+                                                        {
+                                                         'code': 0,<br>
+                                                         'errors': "String" <br>
+                                                        }
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseuserget">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-tsitle collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseuserget" aria-expanded="false"
+                                            aria-controls="collapseuserget">
+                                            {GET} Get User<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseuserget" class="collapse" aria-labelledby="headingTwo_collapseuserget"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/users/{id}</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseuserget" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseuserget" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseuserget" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseuserget">
+                                                    <strong>Body</strong><br>
+                                                    data expected by the end point <br>
+                                                    {id} should be of an existing user <br>
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseuserget">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                    <p>
+                                                        <strong>
+                                                            Authorization token string is in the format of 'Token space usertoken'
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseuserget">
+                                                    <p>
+                                                        <strong>status:</strong> 200 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> user details <br>
+                                                        
+                                                        {
+                                                            'user':{ <br>
+                                                                'email':"string",<br>
+                                                                'username':'string',<br>
+                                                                'password':'string',<br>
+                                                                }<br>
+                                                        }
+                                                    </p>
+                                                    <p>
+                                                        <strong>ERROR:</strong> 404 Not Found
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> error <br>
+                                                        
+                                                        {
+                                                         'error':'detail not found' ,<br>
+                                                        }
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseuseredit">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-tsitle collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseuseredit" aria-expanded="false"
+                                            aria-controls="collapseuseredit">
+                                            {PUT} Edit User<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseuseredit" class="collapse" aria-labelledby="headingTwo_collapseuseredit"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/users/{id}</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseuseredit" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseuseredit" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseuseredit" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseuseredit">
+                                                    <strong>Body</strong><br>
+                                                    data expected by the end point <br>
+                                                    update fields are not all mandatory <br>
+                                                    { <br>
+                                                    'email':"string",<br>
+                                                    'username':'string',<br>
+                                                    'password':'string',<br>
+                                                    }
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseuseredit">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                    <p>
+                                                        <strong>
+                                                            Authorization token string is in the format of 'Token space usertoken'
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseuseredit">
+                                                    <p>
+                                                        <strong>status:</strong> 200 CREATED
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> updated user details <br>
+                                                        
+                                                        {
+                                                            'user':{ <br>
+                                                                'email':"string",<br>
+                                                                'username':'string',<br>
+                                                                'password':'string',<br>
+                                                                },<br>
+                                                            'code': 1<br>
+                                                        }
+                                                    </p>
+                                                    <p>
+                                                        <strong>ERROR:</strong> 400 BAD REQUEST
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> error <br>
+                                                        
+                                                        {
+                                                         'code': 0,<br>
+                                                         'errors': "{errors}" <br>
+                                                        }
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseuserdelete">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-tsitle collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseuserdelete" aria-expanded="false"
+                                            aria-controls="collapseuserdelete">
+                                            {DELETE} Delete User<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseuserdelete" class="collapse" aria-labelledby="headingTwo_collapseuserdelete"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/users/{id}</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseuserdelete" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseuserdelete" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseuserdelete" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseuserdelete">
+                                                    <strong>Body</strong><br>
+                                                    data expected by the end point <br>
+                                                    {id} should be of an existing user <br>
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseuserdelete">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                    <p>
+                                                        <strong>
+                                                            Authorization token string is in the format of 'Token space usertoken'
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseuserdelete">
+                                                    <p>
+                                                        <strong>status:</strong> 204 NO CONTENT
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> message <br>
+                                                        
+                                                        {'messages': "deleted successfully"}
+                                                    </p>
+                                                    <p>
+                                                        <strong>ERROR:</strong> 400 BAD REQUEST
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> error <br>
+                                                        
+                                                        {'messages': "action not successful"}
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseprofile">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-tsitle collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseprofile" aria-expanded="false"
+                                            aria-controls="collapseprofile">
+                                            {GET} List User Profiles<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseprofile" class="collapse" aria-labelledby="headingTwo_collapseprofile"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/userprofiles/</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseprofile" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseprofile" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseprofile" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseprofile">
+
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseprofile">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                    <p>
+                                                        <strong>
+                                                            Authorization token string is in the format of 'Token space usertoken'
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseprofile">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> list of userprofile <br>
+                                                        
+                                                            [{ <br>
+                                                                "user": "integer",<br>
+                                                                "organization":"integer",<br>
+                                                                "phone_number": "string",<br>
+                                                                "period": "integer",<br>
+                                                                "period_units": "string"<br>
+                                                            }] <br>
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+                            <div class="card mb-0">
+                                <div class="card-header" id="headingTwo_collapseprofileget">
+                                    <h5 class="m-0">
+                                        <a class="custom-accordion-tsitle collapsed d-block pt-2 pb-2"
+                                            data-toggle="collapse" href="#collapseprofileget" aria-expanded="false"
+                                            aria-controls="collapseprofileget">
+                                            {GET} Get User Profile<span class="float-right"><i
+                                                    class="mdi mdi-chevron-down accordion-arrow"></i></span>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseprofileget" class="collapse" aria-labelledby="headingTwo_collapseprofileget"
+                                    data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-body">
+            
+                                            <h4 class="card-title mb-3"> <span>url=></span>
+                                                {BASE_URL}/userprofiles/{id}/</h4>
+            
+                                            <ul class="nav nav-tabs mb-3">
+                                                <li class="nav-item">
+                                                    <a href="#home_collapseprofileget" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-home-variant d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">body</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#profile_collapseprofileget" data-toggle="tab" aria-expanded="true"
+                                                        class="nav-link active">
+                                                        <i class="mdi mdi-account-circle d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Headers</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#settings_collapseprofileget" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                                        <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
+                                                        <span class="d-none d-lg-block">Response</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+            
+                                            <div class="tab-content">
+                                                <div class="tab-pane" id="home_collapseprofileget">
+                                                    <strong>Body</strong><br>
+                                                    data expected by the end point <br>
+                                                    {id} should be of an existing profile or user <br>
+                                                </div>
+                                                <div class="tab-pane show active" id="profile_collapseprofileget">
+                                                    <p>
+                                                        Content-Type: application/json <br>
+                                                        Authorization: Token {token}
+                                                    </p>
+                                                    <p>
+                                                        <strong>
+                                                            Authorization token string is in the format of 'Token space usertoken'
+                                                        </strong>
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane" id="settings_collapseprofileget">
+                                                    <p>
+                                                        <strong>status:</strong> 200 OK
+                                                    </p>
+                                                    <p>
+                                                        <strong>Content-Type:</strong> application/json <br>
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> userprofile <br>
+                                                            { <br>
+                                                                'profile': { <br>
+                                                                    "user": "integer",<br>
+                                                                    "organization":"integer",<br>
+                                                                    "phone_number": "string",<br>
+                                                                    "period": "integer",<br>
+                                                                    "period_units": "string"<br>
+                                                                } <br>
+                                                            }
+                                                            
+                                                    </p>
+                                                    <p>
+                                                        <strong>ERROR:</strong> 404 Not Found
+                                                    </p>
+                                                    <p>
+                                                        <strong>response body:</strong> error <br>
+                                                        
+                                                        {
+                                                         'error':'detail not found' ,<br>
+                                                        }
+                                                    </p>
+                                                </div>
+                                            </div>
+            
+                                        </div> <!-- end card-body-->
+                                    </div> <!-- end card-->
+                                </div>
+                            </div> <!-- end card-->
+                        </div> <!-- end custom accordions-->
+                    </div> <!-- end col -->
+
+                </div>
+                <!-- end row-->
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="{% static 'demo/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static 'demo/assets/libs/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'demo/assets/libs/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="{% static 'demo/dist/js/app-style-switcher.js' %}"></script>
+    <script src="{% static 'demo/dist/js/feather.min.js' %}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{% static 'demo/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js' %}"></script>
+    <script src="{% static 'demo/assets/extra-libs/sparkline/sparkline.js' %}"></script>
+    <!--Wave Effects -->
+    <!-- themejs -->
+    <!--Menu sidebar -->
+    <script src="{% static 'demo/dist/js/sidebarmenu.js' %}"></script>
+    <!--Custom JavaScript -->
+    <script src="{% static 'demo/dist/js/custom.min.js' %}"></script>
+    <!-- This Page JS -->
+    <script src="{% static 'demo/assets/extra-libs/prism/prism.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from www.adminmart.com/src/html/ui-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jan 2020 10:54:44 GMT -->
+</html>
